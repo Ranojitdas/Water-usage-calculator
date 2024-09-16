@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberSplash</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER SECTION -->
+    <header>
+        <div class="header-container">
+            <!-- Logo and Branding -->
+            <div id="logo">
+                <a href="#">CyberSplash</a>
+            </div>
+
+            <!-- Navigation Bar -->
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Knowledge</a></li>
+                    <li><a href="#">Contribution</a></li>
+                    <li><a href="#">Quiz</a></li>
+                    <li><a href="#">E-commerce</a></li>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Events</a></li>
+
+                    <!-- Dropdown for Calculators -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Calculator <i class="fa fa-caret-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#">Water Usage Calculator</a>
+                            <a href="#">Water Footprint Calculator</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Profile Icon for User Details -->
+            <div class="profile-icon" onclick="fetchUserDetails()">
+                <i class="fa fa-user-circle"></i>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Advanced Water Usage Calculator</h1>
+        <form id="calculator-form">
+            <div class="form-group">
+                <label for="waterUsage">Current Water Usage (liters)</label>
+                <input type="number" id="waterUsage" required placeholder="Enter water usage in liters">
+                <small class="error-message" id="waterUsageError">Please enter a valid number.</small>
+            </div>
+            <div class="form-group">
+                <label for="technique">Water-Saving Technique</label>
+                <select id="technique" required>
+                    <option value="" disabled selected>Select a technique</option>
+                    <option value="low-flow">Low-Flow Fixtures (20% Reduction)</option>
+                    <option value="rainwater-harvesting">Rainwater Harvesting (30% Reduction)</option>
+                    <option value="drip-irrigation">Drip Irrigation (40% Reduction)</option>
+                </select>
+                <small class="error-message" id="techniqueError">Please select a technique.</small>
+            </div>
+            <button type="submit">Calculate Savings</button>
+        </form>
+        <div id="results" class="results hidden">
+            <h2>Results</h2>
+            <p id="originalUsage"></p>
+            <p id="savings"></p>
+            <p id="newUsage"></p>
+            <div id="chart-container">
+                <canvas id="savingsChart"></canvas>
+            </div>
+        </div>
+<!-- <footer class="footer">
+    <p>&copy; 2024 Water Usage Calculator. All Rights Reserved.</p>
+</footer> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="calculator.js"></script>
+    <!-- FOOTER SECTION -->
+    <footer>
+        <div class="footer-container">
+            <!-- Footer Links Section -->
+            <div class="footer-column">
+                <h3>About CyberSplash</h3>
+                <a href="#">Our Mission</a>
+                <a href="#">Sustainability Goals</a>
+                <a href="#">Careers</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Customer Support</h3>
+                <a href="#">FAQs</a>
+                <a href="#">Help Center</a>
+                <a href="#">Shipping & Returns</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <a href="#">Contact Form</a>
+                <a href="#">Phone Support</a>
+                <a href="#">Email Support</a>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <!-- Footer Bottom Section -->
+        <div class="footer-bottom">
+            <p>&copy; 2024 CyberSplash. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>
